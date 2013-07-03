@@ -1,0 +1,11 @@
+{
+   "lib": {
+    "dependencies": {      
+    }    
+  },
+  "vendor": {
+    "dependencies": {
+      "angular-bootstrap" : ">= 0.4.0"
+    }
+  }
+}

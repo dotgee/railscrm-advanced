@@ -1,0 +1,119 @@
+@mixin input-states($color) {
+  border-color: $color;
+  color: $color;
+  @include box-shadow(none);
+  &:focus {
+    @include box-shadow(none);
+  }
+}
+
+// Text fields
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  border: 2px solid #CCC;
+  color: $content-txt;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  padding: 4px 0 5px 5px;
+  text-indent: 1px;
+  height: 30px;
+  @include border-radius(4px);
+  @include box-shadow(none);
+  @include placeholder-color(#CCC);
+
+  &:focus {
+    border-color: $base;
+    @include box-shadow(none);
+  }
+
+  .control-group.error & {
+    @include input-states($danger);
+  }
+
+  .control-group.success & {
+    @include input-states($success);
+  }
+
+  .control-group.warning & {
+    @include input-states($warning);
+  }
+
+  .control-group.info & {
+    @include input-states($info);
+  }
+
+}
+
+div.input-prepend{
+  background: white;
+  input[type="text"]{
+    @include border-radius(0 4px 4px 0);  
+    border: 1px solid  #e0e0e0;
+    border-left: none;
+  }
+  span{
+    background: white!important;
+    padding-bottom: 15px!important;
+    border-color:#e0e0e0!important;
+
+    i{
+      color: #b2b2b2;
+      background: white;
+      font-size: 25px;
+    }
+  }
+}
+
+// Disabled state -----------------
+input[disabled],
+input[readonly],
+textarea[disabled],
+textarea[readonly] {
+  background-color: scale-color($gray, $lightness: 80%);
+  border-color: transparent;
+  color: scale-color($gray, $lightness: 50%);
+  cursor: default;
+}
+
+// Text field grids -----------------
+input,
+textarea,
+.uneditable-input {
+  width: 192px;
+}
+
+// Textarea post-it -----------------
+textarea.textarea-note{
+  background: none repeat scroll 0 0 #FFFEF3;
+  border: 1px solid #ebebeb;
+  @include border-radius(1px);
+  margin: 20px 0;
+  width: 100%; 
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+
+}
+
+.input-height-small{
+  margin-bottom: 0!important;
+  height: 15px!important;
+}
+.input-height-large{
+  height: 40px!important;
+  width: 100%;
+}
+
+

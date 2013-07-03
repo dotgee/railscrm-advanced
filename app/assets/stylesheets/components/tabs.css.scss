@@ -1,0 +1,46 @@
+.nav-tabs {
+  margin-bottom: 0px;
+  > li {
+    text-align: center;
+    a {
+      @include border-radius(0);
+      background-color: $curious-blue;
+      color: white;
+      margin-right: 0;
+      border: 0;
+      border-top: 3px $curious-blue solid;
+      border-right: 1px solid rgba(255, 255, 255, 0.4);
+      padding: {
+        left: 30px;
+        right: 30px;
+      }
+
+      &.plus-tab {
+        padding: {
+          left: 5px;
+          right: 5px;
+        }
+        min-width: 50px;
+      }
+      min-width: 100px;
+      &:hover, &:focus {
+        background-color: $curious-blue;
+        border-color: $curious-blue;
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+      }
+    }
+    &.active {
+      a, a:hover, a:focus {
+        border: 0;
+        border-top: 3px $curious-blue solid;
+      }
+    }
+  }
+}
+
+.tab-content {
+  background-color: white;
+  padding: 30px 15px 10px;
+  @include border-radius(0 0 3px 3px);
+  @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.08));
+}

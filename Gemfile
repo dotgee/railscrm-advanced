@@ -1,22 +1,31 @@
 source 'http://rubygems.org'
 
 gem 'gibberish'
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 
 group :assets do
   gem 'sass-rails'
+  gem 'compass-rails'
   gem 'coffee-rails'
+  gem "bower-rails", "~> 0.3.2"
   gem 'uglifier'
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails'
+gem 'flatui-rails'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'rails3-generators'
 gem 'simple_form'
+gem 'simple_form_angular'
 gem 'haml'
 gem 'haml-rails'
+gem 'slim'
+gem 'slim-rails'
+gem 'haml2slim'
+gem 'simple_form'
 gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 gem 'devise'
 gem 'bcrypt-ruby'
@@ -26,9 +35,9 @@ gem 'newrelic_rpm'
 
 
 group :production do
-  gem 'thin'
-  ruby '1.9.3'
-  gem 'pg'
+  # gem 'thin'
+  # ruby '1.9.3'
+  # gem 'pg'
 end
 
 group :development do
@@ -37,6 +46,7 @@ group :development do
   gem 'unicorn'
   gem 'hpricot'
   gem 'pry-rails'
+  gem 'therubyracer'
 end
 
 group :test, :development do
@@ -62,3 +72,5 @@ group :test, :development do
   gem 'turn', require: false
 end
 
+gem 'puma'
+gem 'strong_parameters'

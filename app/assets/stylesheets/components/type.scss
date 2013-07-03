@@ -1,0 +1,51 @@
+// Typography
+body {
+  color: #333;
+  font: #{$base-font-size}/#{1.231} 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: $base;
+  text-decoration: none;
+  @include transition(.25s);
+  &:hover {
+    color: scale-color($base, $lightness: 20%);
+    text-decoration: none;
+  }
+}
+h1 {
+  font-size: 32px;
+  font-weight: 900;
+}
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  margin-top: 2px;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 4px;
+  &.bloc-content-title {
+    margin-left: 15px;
+    margin-bottom: 30px;
+  }
+}
+h5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+h6 {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+p {
+  color: $orient;
+}

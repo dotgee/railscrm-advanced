@@ -1,0 +1,54 @@
+.statistics{
+  padding: 20px;
+
+  .statistic{
+    border-right: 1px solid #f6f6f6;
+    display: inline-block;
+    padding: 0 25px;
+    .statistic-title{
+      color: $gray;
+      font-size: 1.5em;
+      display: block;
+      text-align: center;
+    }
+    .statistic-figure{
+      display: inline-block;
+
+      .statistic-inflation-up{ 
+        display: block;
+        background: url(up.png) center right no-repeat;
+        width: 20px;
+        height: 20px;
+      }
+      .statistic-inflation-down{
+        display: block;
+        background: url(down.png) center right no-repeat;
+        width: 20px;
+        height: 20px;
+      }
+      .statistic-purcent{
+        display: block;
+        font-size: 0.9em;
+        color: $gray;
+        margin-right: 5px;
+      }
+    }
+
+    .statistic-currency{
+      font-size: 1.2em;
+      color: #888888;
+      margin-left: 5px;
+    }
+
+    .statistic-number{
+      color: darken($lochmara, 5);
+      font-size: 2em;
+    }
+  }
+  .statistic:last-child{
+    border: none;
+  }
+
+
+
+}

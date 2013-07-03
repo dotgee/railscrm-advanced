@@ -1,0 +1,19 @@
+.header {
+	background-color: $dark-blue;
+	border-top: solid 3px #003b53;
+	height: 68px;
+	.header-menu {
+
+	}
+  .menu-name {
+    margin-bottom: 4px;
+  }
+  .nav {
+    > li > a {
+      &:hover i {
+        color: #f0f6f8;
+      }
+    }
+  }
+}
+

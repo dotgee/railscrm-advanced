@@ -1,0 +1,78 @@
+$form-height: 420px;
+$form-width: 365px;
+
+@function calc-margin($number){
+  @return $number / -2
+}
+
+body.login{
+  background: $allports;
+}
+
+.form-login{
+  background: white;
+  height: $form-height;
+  width: $form-width;
+  padding: 35px 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: calc-margin($form-width);
+  margin-top: calc-margin($form-height);
+  @include border-radius(4px);
+  box-sizing: border-box;
+
+  .form-inputs {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  input {
+    height: 40px;
+    padding-left: 50px;
+    // @include input-placeholder {
+    //   font-size: 15px;
+    // }
+  }
+
+  #username{
+    background: url("icon-user.png") no-repeat 10px 8px;
+  }
+
+  #password{
+    background: url("icon-lock.png") no-repeat 12px 8px;
+  }
+
+  .form-logo {
+    text-align: center;
+  }
+
+  .forgot-password {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #aaaaaa;
+  }
+
+  .remember-me {
+    display: inline-block;
+    font-size: 15px;
+    color: #888888;
+    line-height: 26px;
+  }
+
+  .toggle {
+    float: right;
+    background: $lochmara;
+    .toggle-radio {
+      color: white;
+      background: url("icon-on-white.png") right top no-repeat;
+    }
+    &.toggle-off {
+      background: #bdc3c7;
+      .toggle-radio {
+        background: url("icon-on-white.png") no-repeat;
+      }
+    }
+  }
+}

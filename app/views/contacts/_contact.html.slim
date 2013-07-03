@@ -1,0 +1,8 @@
+.contact.media ng-class="{active: $index == selectedRow}"
+   a.pull-left href="#"
+     = image_tag "default-contact.png", class: "media-object"
+   .media-body
+     h4
+      | {{contact.first_name}} {{contact.last_name}}
+     .contact-company
+      | {{contact.company}}

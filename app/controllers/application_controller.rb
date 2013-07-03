@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  layout :choose_layout
+
+  alias :login_required :authenticate_user!
+  alias :logged_in? :user_signed_in?
+
+  helper_method :logged_in?
+
   before_filter :set_current_user
 
   def after_sign_in_path_for(resource)
@@ -24,4 +31,9 @@ private
     set_current_user
   end
 
+  protected
+
+  def choose_layout
+    params[:layout].blank? ? 'dotgee' : params[:layout].to_s
+  end
 end

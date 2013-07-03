@@ -1,0 +1,8 @@
+ul.informations{
+  column-count:3;
+  -moz-column-count:3; /* Firefox */
+  -webkit-column-count:3; /* Safari and Chrome */
+  .information-content {
+    color: $orient;
+  }
+}

@@ -1,0 +1,20 @@
+.form-horizontal
+  .fieldset
+    .legend
+    = simple_form_for @contact, url: '', html: { :class => 'form-horizontal' }, ng: { submit: "add()" } do |f|
+      div
+        .span6
+          = f.input :first_name, ng: { model: 'contact.first_name' }
+          = f.input :last_name, ng: { model: 'contact.last_name' }
+          = f.input :email, ng: { model: 'contact.email' }
+          = f.input :phone, ng: { model: 'contact.phone' }
+          = f.input :company, ng: { model: 'contact.company' }
+        .span6
+          = f.input :address, ng: { model: 'contact.address' }
+          = f.input :city, ng: { model: 'contact.city' }
+          = f.input :state, ng: { model: 'contact.state' }
+          = f.input :zip, ng: { model: 'contact.zip' }
+      .span12.pull-right 
+        = f.submit class: 'btn btn-primary'
+        = link_to 'Cancel', contacts_path, class: "btn btn-danger"
+  

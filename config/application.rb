@@ -36,7 +36,7 @@ module RebelFoundation
     # Generators to automatically generate using non-rails standard gems
     config.generators do |g|
       g.orm                 :mongoid
-      g.template_engine     :haml
+      g.template_engine     :slim
       g.test_framework      :rspec
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       
@@ -60,6 +60,9 @@ module RebelFoundation
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.assets.paths << Rails.root.join("lib", "assets", "components")
+    config.assets.paths << Rails.root.join("vendor", "assets", "components")
   end
 end
 

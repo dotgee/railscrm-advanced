@@ -1,0 +1,60 @@
+.monitoring-line{
+  float: left;
+
+}
+
+.agenda-content{
+  margin-top: -20px;
+  border-left: 1px solid #cccccc;
+  background: #eaeaea;
+  height: 700px;
+  margin-right: -20px;
+}
+
+.agenda-events{
+
+  margin-right: 20px;
+    
+  .event-content{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 50px;
+    width: 80%;
+  }
+}
+.event-informations{
+  float: left;
+  padding-right: 30px;
+  .event-date{
+    font-size: 1.3em;
+    color: darken($lochmara, 5);
+    display: block;
+    i{
+      padding-top: 5px;
+      font-size: 0.8em;
+      padding-right: 5px;
+    }
+    &.active{
+      color: #c0392b;
+    }
+  }
+  
+}
+
+.event-name{
+  font-size: 1em;
+  color: $gray;
+  display: block;
+  vertical-align: center;
+}
+.event-link-detail{
+  float: right;
+  color: $gray;
+  margin-right: -15px;
+  i{
+    padding-top: 10px;
+    font-size: 1.5em;
+  }
+}
+

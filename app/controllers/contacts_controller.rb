@@ -1,7 +1,10 @@
 class ContactsController < PublicController
+  include AngularController
 
   def index
     @contacts = current_user.organization.contacts
+    @contact = Contact.new
+    respond_with @contacts
   end
   
   def new

@@ -30,6 +30,12 @@ RebelFoundation::Application.routes.draw do
     resources :organizations
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :contacts
+    end
+  end
+
   resources :tasks
   resources :contacts
   resources :accounts

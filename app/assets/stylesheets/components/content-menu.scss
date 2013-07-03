@@ -1,0 +1,79 @@
+.content-menu {
+	background-color: $mineshaft;
+	width: 142px;
+	position: absolute;
+	height: 100%;
+	top: 0;
+  left: -100px;
+  margin-top: -1px; 
+  @include background-image(linear-gradient(left, $tundora 0, $tundora 100px, darken($tundora, 5) 100px));
+  @include transition-property(left);
+  @include transition-duration(300ms);
+	ul {
+		margin: 0;
+	}
+
+  li {
+    height: 50px;
+    clear: both;
+    line-height: auto;
+    cursor: pointer;
+    i{
+      padding-bottom: 4px;
+      padding-top: 4px;
+
+    }
+  }
+
+  &.pushed {
+    left: 0;
+  }
+
+  .content-menu-link {
+    &:hover, &.active {
+      .content-menu-text {
+        background-color: $lochmara;
+        color: #FFF;
+      }
+      .content-menu-icon {
+        background-color: darken($lochmara, 5);
+        color: #FFF;
+      }
+    }
+  }
+
+  .content-menu-text {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 30px;
+    @include link-colors(#eee, #eee, #eee, #eee, #eee);
+    width: 90px;
+    padding: 10px 0px 10px 10px;
+  }
+
+  .content-menu-icon {
+    display: inline-block;
+    width: 42px;
+  }
+
+  .content-menu-icon,
+  .btn-push-menu {
+    width: 42px;
+    height: 42px;
+    line-height: 40px;
+    display: inline-block;
+    font-family: 'Entypo';
+    font-size: 20px;
+    text-align: center;
+    color: #AFB1B2;
+    vertical-align: top;
+  }
+
+  .btn-push-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #555555;
+    color: $mineshaft;
+  }
+}

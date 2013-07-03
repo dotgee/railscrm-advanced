@@ -1,0 +1,180 @@
+
+@mixin button-states($color) {
+  background-color: $color;
+  &:hover,
+  &:focus {
+    background-color: scale-color($color, $lightness: 20%);
+  }
+  &:active,
+  &.active {
+    background-color: scale-color($color, $lightness: -15%);
+  }
+}
+
+i {
+  font-family: "Entypo";
+  height: 24px;
+  width: 24px;
+  font-size: 30px;
+  text-align: center;
+  // padding: 4px 5px 4px 5px;
+  line-height: 24px;
+  font-style: normal;
+}
+
+// Buttons -----------------------
+.btn {
+  border: none;
+  background: $base;
+  color: $inverse;
+  font-size: 14px;
+  text-decoration: none;
+  text-shadow: none;
+  @include box-shadow(none);
+  @include transition(.25s);
+  padding: 6px 12px;
+  border-radius: 3px;
+
+  &:first-child {
+    margin-right: 6px;
+  }
+  &:hover,
+  &:focus {
+    background-color: scale-color($base, $lightness: 20%);
+    color: $inverse;
+    @include transition(.25s);
+  }
+  &:active,
+  &.active {
+    background-color: scale-color($base, $lightness: -15%);
+    color: rgba($inverse, .75);
+    @include box-shadow(none);
+  }
+  &.disabled,
+  &[disabled] {
+    background-color: $gray;
+    color: $inverse;
+  }
+  // Sizes -----------------------
+  &.btn-large {
+    padding-bottom: 12px;
+    padding-top: 13px;
+  }
+  // Colors -----------------------
+  &.btn-primary {
+    @include button-states(#999);
+  }
+  &.btn-info {
+    @include button-states($info);
+  }
+  &.btn-danger {
+    @include button-states($danger);
+  }
+  &.btn-success {
+    @include button-states($success);
+  }
+  &.btn-warning {
+    @include button-states($warning);
+  }
+
+  // Button with icon inside
+  .btn-toolbar & {
+    font-size: 18px;
+    padding: 10px 14px 9px;
+
+    &:first-child {
+      @include border-radius(6px 0 0 6px);
+    }
+    &:last-child {
+      @include border-radius(0 6px 6px 0);
+    }
+  }
+}
+
+.btn.icn-prepended {
+  padding: 0;
+  i {
+    background-color: $allports;
+    font-size: 24px;
+    width: 27px;
+    height: 22px;
+    display: inline-block;
+    padding: 4px 6px 5px 6px;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .btn-text {
+    padding: 6px 16px 0px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  &:hover, &:focus {
+    i {
+      background-color: scale-color($allports, $lightness: 20%);
+    }
+  }
+}
+
+.btn-toolbar {
+  .btn.active {
+    color: $inverse;
+  }
+}
+.btn-menu-icon {
+  // display: block;
+  // font-family: 'Entypo';
+  font-size: 30px;
+  width: 30px;
+  font-weight: normal;
+  line-height: 30px;
+  // margin-bottom: 4px;
+  color: rgba(0,0,0,0.3);
+  text-align: center;
+  padding-top: 5px;
+}
+.active {
+  .btn-menu-icon {
+    color: #f0f6f8;
+  }
+}
+.customer-action-btn {
+  display: inline-block;
+  width: 52px;
+  height: 48px;
+  background-color: $btn-dark-blue;
+  border: solid 1px rgba(0, 87, 123, 0.6);
+  font-family: 'Entypo';
+  font-size: 72px;
+  line-height: 48px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFF;
+  cursor: pointer;
+  &:hover {
+    background-color: scale-color($btn-dark-blue, $lightness: 5%);
+    color: #FFF;
+  }
+}
+.btn-dialog{
+  i{
+    color: #aaaaaa;
+  }
+  &.active{
+    i{
+      color: $allports;
+    }
+  }
+}
+
+.btn-cancel{
+  color: $btn-cancel-text;
+  background: $btn-cancel-background;
+  margin: O 10px;
+
+  &:hover, &:focus{
+    color: $btn-cancel-hover-text;
+    background: $btn-cancel-hover-background;
+  }
+
+}

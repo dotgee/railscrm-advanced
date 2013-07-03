@@ -1,0 +1,53 @@
+body {
+	background-color: #EFEFEF;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+html, body, #page {
+  height: 100%;
+}
+
+.wrapper {
+  position: absolute;
+  top: 153px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding-bottom: 0px;
+  &.no-context-bar {
+    top: 89px;
+  }
+}
+
+#page {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  right: 0;
+  bottom: 0; 
+  width: auto;
+  height: auto;
+  @include transition-property(left);
+  @include transition-duration(300ms);
+  &.pushed {
+    left: 150px;
+  }
+  &.no-sidebar {
+    left: 0;
+  }
+  > div{  
+    padding: 20px;
+    &.scrollable{
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+.hide{
+  display: none!important;
+}
