@@ -1,0 +1,9 @@
+.contact-list-content
+  .contact-list
+    .contact.media ng-repeat="contact in contacts | orderBy:'LastName'"
+       a.pull-left href="/contacts/{{contact._id}}"
+         = image_tag "default-contact.png", class: "media-object"
+       .media-body
+         h4
+          |{{contact.first_name}} {{contact.last_name}}
+         .contact-company airbus

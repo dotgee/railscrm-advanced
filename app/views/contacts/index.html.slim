@@ -1,50 +1,21 @@
 - content_for :ng_app, "crm"
 
 div ng-controller="ContactCtrl"
-  .row-fluid
-    .functions.pull-right
-      = link_to 'Create Contact', new_contact_path, class: 'btn btn-inverse'
-      a.btn ng-click="openModal()"
-        | Create Contact Modal
-    
-    br/
-    div
-      .span4
-        .contact-list-container.contact-list
-          ul.ng-cloak ng-cloak=''
-            li ng-repeat="contact in contacts" ng-click="showContact(contact, $index)"
-              = render partial: 'contact'
-  
-      .span8
-        .contact-view-container.ng-cloak ng-show="selectedContact" ng-cloak=''
-          h2
-            | {{selectedContact.first_name}} {{selectedContact.last_name}}
-          small
-            | {{selectedContact.company}}
-          h5
-            | Phones
-            ul
-              li ng-repeat="phone in selectedContact.phones"
-                | {{phone}}
-          h5
-            | Emails
-            ul
-              li
-                | {{selectedContact.email}}
-          h5
-            | Address
-            p
-              | {{selectedContact.address}}
-              br
-              | {{selectedContact.zip}} {{selectedContact.city}} 
-  
-  
-  div modal="shouldBeOpen" close="closeModal()" options="modalOpts"
-    .modal-header
-      | Add Contact
-    .modal-body
-      .row-fluid
-        = render partial: 'angular_form'
-    .modal-footer
-      button.btn.btn-warning.cancel ng-click="closeModal()"
-        | cancel
+  div
+    pre
+      | $state = {{$state.current.name}}
+    pre
+      | $stateParams = {{$stateParams}}
+    pre
+      | contacts.length = {{contacts.length}}
+  .functions.pull-right
+    = link_to 'Create Contact', new_contact_path, class: 'btn btn-inverse'
+
+  div ui-view='hint'
+  br/
+  .row-fluid 
+    .span4
+      div ui-view='contacts-list'
+    .span8
+      div ui-view='contact-pane'
+

@@ -1,6 +1,8 @@
 Crm.factory "Contact", ($resource) -> $resource "/api/v1/contacts/:id", id: "@id"
 
-Crm.controller "ContactCtrl", ($scope, Contact) ->
+Crm.controller "ContactCtrl", ($scope, $state, Contact) ->
+  # $state.transitionTo('contacts')
+
   # Attributes accessible on the view
   $scope.selectedContact = null
   $scope.selectedRow     = null
@@ -9,6 +11,7 @@ Crm.controller "ContactCtrl", ($scope, Contact) ->
   $scope.contacts = Contact.query ->
     $scope.selectedContact = $scope.contacts[0]
     $scope.selectedRow = 0
+    console.log $scope.contacts
 
   $scope.showContact = (contact, row) ->
     $scope.selectedContact = contact

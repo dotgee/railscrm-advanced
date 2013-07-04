@@ -1,0 +1,6 @@
+.contact-list-container.contact-list
+  ul.ng-cloak ng-cloak=''
+    li ng-repeat="contact in contacts" ng-class="{ active: $state.includes('contacts.detail') && $stateParams.contactId == contact.id }"
+      a href="/contacts/{{contact._id}}"
+        | {{contact.email}}
+      div ng-include='' src="'/angular/templates/contact-item.html'"

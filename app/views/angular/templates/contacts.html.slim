@@ -1,0 +1,11 @@
+.functions.pull-right
+  = link_to 'Create Contact', new_contact_path, class: 'btn btn-inverse'
+
+div ui-view='hint'
+br/
+.row-fluid
+  .span4
+    div ui-view='contacts-list'
+  .span8
+    div ui-view='contact-pane'
+

@@ -1,0 +1,19 @@
+- content_for :ng_app, "crm"
+
+div
+  pre
+    | $state = {{$state.current.name}}
+  pre
+    | $stateParams = {{$stateParams}}
+  .row-fluid
+    .functions.pull-right
+      = link_to 'Create Contact', new_contact_path, class: 'btn btn-inverse'
+    
+    br/
+    div
+      .span4
+        div ui-view='contacts-list'
+      .span8
+        div ui-view='contact-pane'
+
+div ui-view=''
